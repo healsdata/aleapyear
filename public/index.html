@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Is it a leap year?</title>
+  <meta name="description" content="A simple, no nonsense answer to whether or not this year is a leap year.">
+
+  <meta property="og:title" content="Is it a leap year?">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <meta name="theme-color" content="#0AA">
+  <style>
+    p {
+        font-size: 32px;
+    }
+    h1 {
+        font-size: 64px;
+    }    
+    p, h1 {
+        text-align: center;        
+    }
+  </style>
+</head>
+
+<body>
+    <main>
+        <p>Is it a leap year?</p>
+        <h1 id="answer"></h1>
+        <p id="details"></p>        
+    </main>  
+    <aside>
+        <noscript><p>Unknown! (This site uses JavaScript to determine if the current year is a leap year)</p></noscript>
+    </aside>
+
+    <script type="application/javascript">
+        const year = new Date().getFullYear();
+        const isLeapYear = new Date(year, 1, 29).getDate() === 29;
+    
+        document.getElementById("answer").innerHTML = isLeapYear ? "Yes" : "No";
+        document.getElementById("details").innerHTML = isLeapYear ?
+            year + " is a leap year. Enjoy February 29th!" :
+            year + " is NOT a leap year.";
+      </script>    
+</body>
+
+</html>
